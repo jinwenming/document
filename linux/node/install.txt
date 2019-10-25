@@ -1,0 +1,21 @@
+首先去官网下载最新的nodejs文件，或者直接执行命令：
+wget https://nodejs.org/dist/v12.13.0/node-v12.13.0-linux-x64.tar.xz
+然后到下载目录上执行命令解压：
+tar zxvf ./node-v12.13.0-linux-x64.tar.xz -C /usr/local/scr/
+
+配置node
+vim ~/.profile
+
+在文件最未加上：
+exprot PATH=$PATH:/usr/local/src/node-v12.13.0-linux-x64
+
+保存退出：
+:wq
+
+刷新：
+source ~/.profile
+
+检查是否成功：
+node -v
+
+npm -v
