@@ -1,0 +1,11 @@
+vscode 在linux下保存后不能自动编译
+
+执行以下命令
+
+sudo vim /etc/sysctl.conf
+
+在下面添加一行
+
+fs.inotify.max_user_watches=524288
+
+然后重启vscode 保存后可以自动编译了
