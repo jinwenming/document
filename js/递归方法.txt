@@ -1,0 +1,25 @@
+//递归实现
+//@id  查找的id，
+//@data   原始Json数据
+export function recursion(id, data) {
+  let childrens = []
+  let i = 0
+  for (i = 0; i < data.length; i++) {
+    if (id == data[i].parentId) {
+      childrens.push(data[i])
+    }
+  }
+  if (childrens.length <= 0) return null
+  let dataTemp = []
+  for (i = 0; i < childrens.length; i++) {
+    if (id == childrens[i].parentId) {
+      let temp = {
+        id: childrens[i].id,
+        label: childrens[i].name,
+        children: recursion(childrens[i].id, data)
+      }
+      dataTemp.push(temp)
+    }
+  }
+  return dataTemp
+}
