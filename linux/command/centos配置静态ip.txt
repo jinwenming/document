@@ -1,0 +1,32 @@
+首先打开配置文件：
+vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 
+
+TYPE="Ethernet"
+PROXY_METHOD="none"
+BROWSER_ONLY="no"
+＃BOOTPROTO="dhcp"改为static
+BOOTPROTO="static"
+
+#以下为增加
+IPADD="192.168.1.70"
+NETMASK="255.255.255.0"
+GETEWAY="192.168.1.1"
+DNS1="8.8.8.8"
+DNS2="114.114.114.114"
+＃增加结束
+
+DEFROUTE="yes"
+IPV4_FAILURE_FATAL="no"
+IPV6INIT="yes"
+IPV6_AUTOCONF="yes"
+IPV6_DEFROUTE="yes"
+IPV6_FAILURE_FATAL="no"
+IPV6_ADDR_GEN_MODE="stable-privacy"
+NAME="enp0s3"
+UUID="c1444c1a-12ae-4717-970e-c4d95efa54d0"
+DEVICE="enp0s3"
+ONBOOT="yes"
+
+退出
+输入重启网络命令：(注：网络上的用service networking restart是错误的)
+nmcli c reload 
