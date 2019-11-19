@@ -1,0 +1,8 @@
+找到libreoffice位置：cd /opt/libreoffice6.3/program/
+
+配置环境：
+备份：cp /etc/profile /etc/profile.back
+编辑：sudo vi /etc/profile
+export PATH="$PATH:/opt/libreoffice6.3/program/"
+
+source /etc/profile
