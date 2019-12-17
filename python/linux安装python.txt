@@ -1,0 +1,32 @@
+1、下载
+wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
+
+2、解压
+tar -zxvf Python-3.7.0.tgz
+
+3、建立一个空文件夹
+sudo mkdir /usr/local/python3 
+
+4、执行配置文件，编译，编译安装
+cd Python-3.7.0
+./configure --prefix=/usr/local/python3
+make && make install
+
+5、如果出错
+会遇到No module named '_ctypes'的情况，提示缺少ctypes模块，请使用apt install libffi-dev命令来安装此模块，解决此问题。
+
+6、建立软连接
+sudo ln -s /usr/local/python3/bin/python3.7 /usr/bin/python3
+sudo ln -s /usr/local/python3/bin/pip3.7 /usr/bin/pip3
+
+7、测试一下python3是否可以用
+
+[root@mini Python-3.7.0]# python3
+Python 3.7.0 (default, Jul 28 2019, 22:47:29) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-28)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("hello world!")
+hello world!
+>>> exit()
+[root@mini Python-3.7.0]# pip3 --version
+pip 10.0.1 from /usr/local/python3/lib/python3.7/site-packages/pip (python 3.7)
