@@ -1,1 +1,1 @@
- docker run -p 6379:6379 -d redis:latest redis-server
+ docker run --restart=always -p 6379:6379 -d redis:latest redis-server

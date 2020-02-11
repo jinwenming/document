@@ -114,3 +114,6 @@ $ kubectl cluster-info dump --output-directory=/path/to/cluster-state   # 将当
 
 #如果该键和影响的污点（taint）已存在，则使用指定的值替换
 $ kubectl taint nodes foo dedicated=special-user:NoSchedule
+
+
+kubectl port-forward rabbitmq-0 15672:15672 -n data-center
