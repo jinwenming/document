@@ -7,7 +7,7 @@ tar zxvf ./node-v12.13.0-linux-x64.tar.xz -C /usr/local/scr/
 vim ~/.profile
 
 在文件最未加上：
-exprot PATH=$PATH:/usr/local/src/node-v12.13.0-linux-x64
+export PATH=$PATH:/usr/local/src/node-v12.13.0-linux-x64
 
 保存退出：
 :wq
