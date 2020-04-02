@@ -1,0 +1,4 @@
+cd ~/.navicat64/
+rm system.reg
+rm user.log
+rm user.reg
