@@ -1,7 +1,7 @@
 centos8网络配置
 
 首先打开配置文件：
-vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 
+vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
 
 TYPE="Ethernet"
 PROXY_METHOD="none"

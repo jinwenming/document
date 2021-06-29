@@ -13,7 +13,9 @@ source /etc/profile
     #查看防火墙状态
     firewall-cmd --state
 3、关闭swap
+    swapoff -a
     vim /etc/fstab
+    #/dev/mapper/centos-swap swap                    swap    defaults        0 0
 
 #安装docker
 
@@ -174,13 +176,13 @@ systemctl enable kubelet && systemctl start kubelet
     kubeadm token create --print-join-command
     可获取kubeadm join 命令及参数，如下所示
     # kubeadm token create 命令的输出
-    kubeadm join apiserver.demo:6443 --token ofkv6j.n5t907lpatdu9pki     --discovery-token-ca-cert-hash sha256:8d819d016549a16f8183affe4a082c505f3a9e2d29b75fa63071d7ee2305be2c 
+    kubeadm join apiserver.demo:6443 --token ofkv6j.n5t907lpatdu9pki  --discovery-token-ca-cert-hash sha256:8d819d016549a16f8183affe4a082c505f3a9e2d29b75fa63071d7ee2305be2c 
 
 #初始化 worker节点
     针对所有的 worker 节点执行
     # 只在 worker 节点执行
     echo "192.168.1.70  apiserver.demo" >> /etc/hosts
-    kubeadm join apiserver.demo:6443 --token ofkv6j.n5t907lpatdu9pki     --discovery-token-ca-cert-hash sha256:8d819d016549a16f8183affe4a082c505f3a9e2d29b75fa63071d7ee2305be2c
+    kubeadm join apiserver.demo:6443 --token ofkv6j.n5t907lpatdu9pki  --discovery-token-ca-cert-hash sha256:8d819d016549a16f8183affe4a082c505f3a9e2d29b75fa63071d7ee2305be2c
 
 #检查初始化结果
     在 master 节点 demo-master-a-1 上执行
