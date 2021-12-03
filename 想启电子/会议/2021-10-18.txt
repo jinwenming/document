@@ -1,0 +1,2 @@
+1、WebMainHsms
+2、appsettings.json:产量：ReadYield:设置为true为启用，要在下面设置队列。
